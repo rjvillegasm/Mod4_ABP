@@ -1,15 +1,38 @@
 class GestorClientes:
     def __init__(self):
-        pass    
+        self.__clientes=[]    
     
+    #Función para agregar clientes
+    #Valida que el no esté vacío y el ID no se repita 
     def agregar(self, cliente):
-        pass
+        if cliente is None:
+            raise ValueError("No se puede agregar un cliente vacío")
+        if self.buscar(cliente.get_id()):
+            raise ValueError("Ya existe cliente con ese ID")
+        
+        self.__clientes.append(cliente)
     
+    #Función que lista los clienters registrados
+    #Valida que no esten vacíos y utiliza método especial __str__    
     def listar(self, cliente):
-        pass
-    
-    def bsucar(self, id_cliente):
-        pass
+        if not self.__clientes:
+            raise ValueError("No hay clientes registrados")
+        
+        for cliente in self.__clientes:
+            print(f"{cliente} -( Descuento: {cliente.calcular_descuento()})")
+
+    # Función para buscar un cliente por su ID
+    # Valida que ID sea entero y no negativo
+    def buscar(self, id_cliente):
+        if not isinstance(id_cliente, int):
+            raise TypeError("El id a buscar debe ser entero")
+        if id_cliente<=0:
+            raise ValueError("El ID deber ser un valor posistivo")
+        
+        for cliente in self.__clientes:
+            if cliente.get_id()== id_cliente:
+                return cliente
+        return None
     
     def eliminar(self, id_cliente):
         pass
