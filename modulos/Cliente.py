@@ -24,6 +24,10 @@ class Cliente:
         self.__email=email
         self.__nombre=nombre
     
+    # Método especial para mejorar legibilidad
+    def __str__(self):
+        return f"Cliente {self.__nombre} (ID: {self.__id}) - {self.__email}"
+    
     # Función para obtener ID
     def get_id(self):
         return self.__id

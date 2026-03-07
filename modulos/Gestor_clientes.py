@@ -34,5 +34,23 @@ class GestorClientes:
                 return cliente
         return None
     
+    # Función para eliminar clientes
+    # Valida que ID sea entero y no negativo
     def eliminar(self, id_cliente):
-        pass
+        
+        if not isinstance(id_cliente, int):
+            raise TypeError("El id a eliminar debe ser entero")
+        if id_cliente<=0:
+            raise ValueError("El ID deber ser un valor posistivo")
+        cliente = self.buscar(id_cliente)
+        
+        if cliente is None:
+            raise ValueError("Cliente no encontrado")
+        
+        nueva_lista= []
+        for cliente in self.__clientes:
+            if cliente.get_id() != id_cliente:
+                nueva_lista.append(cliente)
+                
+        self.__clientes=nueva_lista
+    
