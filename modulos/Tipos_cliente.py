@@ -1,4 +1,4 @@
-from Cliente import Cliente
+from cliente import Cliente
 
 class ClienteRegular(Cliente):
     def __init__(self, cliente_id, nombre, email, puntos):
