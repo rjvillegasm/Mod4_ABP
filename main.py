@@ -2,8 +2,8 @@ from modulos.cliente import Cliente
 from modulos.gestor_clientes import GestorClientes
 from modulos.tipos_cliente import ClienteRegular, ClientePremium, ClienteCorporativo
 
-#import tkinter as tk
-#from tkinter import messagebox, ttk
+import tkinter as tk
+from tkinter import messagebox, ttk
 
 def main():
     gestor=GestorClientes()
