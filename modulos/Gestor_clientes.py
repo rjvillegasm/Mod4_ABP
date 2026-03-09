@@ -14,12 +14,12 @@ class GestorClientes:
     
     #Función que lista los clienters registrados
     #Valida que no esten vacíos y utiliza método especial __str__    
-    def listar(self, cliente):
+    def listar(self):
         if not self.__clientes:
             raise ValueError("No hay clientes registrados")
         
         for cliente in self.__clientes:
-            print(f"{cliente} -( Descuento: {cliente.calcular_descuento()})")
+            print(f"{cliente} - Descuento: {cliente.calcular_descuento()}")
 
     # Función para buscar un cliente por su ID
     # Valida que ID sea entero y no negativo
@@ -41,7 +41,7 @@ class GestorClientes:
         if not isinstance(id_cliente, int):
             raise TypeError("El id a eliminar debe ser entero")
         if id_cliente<=0:
-            raise ValueError("El ID deber ser un valor posistivo")
+            raise ValueError("El ID deber ser un valor positivo")
         cliente = self.buscar(id_cliente)
         
         if cliente is None:
@@ -54,3 +54,15 @@ class GestorClientes:
                 
         self.__clientes=nueva_lista
     
+    # Función para buscar indivualmente clientes
+    def obtener_cliente_individual(self, id_cliente):
+        cliente = self.buscar(id_cliente)
+        
+        if cliente:
+            print(f"{cliente} - Descuento: {cliente.calcular_descuento()}")
+            return cliente
+        else:
+            print(f"No se encontró el cliente con ID {id_cliente}")
+            return None
+        
+        

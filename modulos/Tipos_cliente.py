@@ -1,4 +1,4 @@
-from cliente import Cliente
+from modulos.cliente import Cliente
 
 class ClienteRegular(Cliente):
     def __init__(self, cliente_id, nombre, email, puntos):
@@ -12,7 +12,7 @@ class ClienteRegular(Cliente):
     
 
     def __str__(self):
-        return super().__str__() + f"- (Puntos: {self.__puntos}]"
+        return super().__str__() + f" - Puntos: {self.__puntos}"
 
     # El max descuento de un cliente regular es 5%
     def calcular_descuento(self):
@@ -27,7 +27,7 @@ class ClientePremium(Cliente):
         self.__membresia=membresia
     
     def __str__(self):
-        return super().__str__() + f"- (Membresía: {self.__membresia})"
+        return super().__str__() + f"- Membresía: {self.__membresia}"
     
     def calcular_descuento(self):
         return 0.1
@@ -44,9 +44,7 @@ class ClienteCorporativo(Cliente):
         self.__empresa=empresa
         
     def __str__(self):
-        return super().__str__() + f"- (Empresa: {self.__empresa})"    
+        return super().__str__() + f"- Empresa: {self.__empresa}"    
     
     def calcular_descuento(self):
         return 0.15
-
-    
