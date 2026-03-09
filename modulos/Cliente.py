@@ -1,5 +1,9 @@
 class Cliente:
     def __init__(self, cliente_id, nombre, email):
+        try:
+            cliente_id = int(cliente_id)
+        except ValueError:
+            raise TypeError("El ID debe ser un valor numérico")
         
         # Validamos que el ID sea entero y postivo
         if not isinstance(cliente_id, int):

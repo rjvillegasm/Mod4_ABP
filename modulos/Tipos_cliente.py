@@ -3,6 +3,11 @@ from modulos.cliente import Cliente
 class ClienteRegular(Cliente):
     def __init__(self, cliente_id, nombre, email, puntos):
         super().__init__(cliente_id,nombre, email)
+        try:
+            puntos = int(puntos)
+        except ValueError:
+            raise TypeError("Los puntos debe ser un valor numérico")
+        
         if not isinstance( puntos, (int, float)):
             raise TypeError("Los puntos deben ser numéricos")
         if puntos <0:
