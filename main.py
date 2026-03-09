@@ -63,43 +63,42 @@ if __name__=="__main__":
     
     #Widgets
     
-    # Widget combobox para seleccionar tipo de clienete
-    tipo_combo = ttk.Combobox(ventana,
-                                textvariable=tipo_var, 
-                                values=["Regular", "Premium", "Corporativo"])
+    # Widget combobox para seleccionar tipo de cliente
+    tk.Label(ventana, text="Tipo Cliente:").grid(row=0, column=0, padx=5, pady=5, sticky="e")
+    tipo_combo = ttk.Combobox(ventana, textvariable=tipo_var, values=["Regular", "Premium", "Corporativo"])
+    tipo_combo.grid(row=0, column=1, padx=5, pady=5, sticky="w")
     tipo_combo.bind("<<ComboboxSelected>>", seleccionar_tipo)
-    tipo_combo.pack()
-    
-    # Widget para agregar clientes
-    tk.Label(ventana, text="ID:").pack()
+
+    # Widgets para agregar clientes
+    tk.Label(ventana, text="ID:").grid(row=1, column=0, padx=5, pady=5, sticky="e")
     entrada_id = tk.Entry(ventana)
-    entrada_id.pack()
-    
-    tk.Label(ventana, text="Nombre:").pack()
+    entrada_id.grid(row=1, column=1, padx=5, pady=5, sticky="w")
+
+    tk.Label(ventana, text="Nombre:").grid(row=2, column=0, padx=5, pady=5, sticky="e")
     entrada_nombre = tk.Entry(ventana)
-    entrada_nombre.pack()
-    
-    tk.Label(ventana, text="Email:").pack()
+    entrada_nombre.grid(row=2, column=1, padx=5, pady=5, sticky="w")
+
+    tk.Label(ventana, text="Email:").grid(row=3, column=0, padx=5, pady=5, sticky="e")
     entrada_email = tk.Entry(ventana)
-    entrada_email.pack()
-    
-    tk.Label(ventana, text="Puntos:").pack()
+    entrada_email.grid(row=3, column=1, padx=5, pady=5, sticky="w")
+
+    tk.Label(ventana, text="Puntos:").grid(row=4, column=0, padx=5, pady=5, sticky="e")
     entrada_puntos = tk.Entry(ventana)
-    entrada_puntos.pack()
-    
-    tk.Label(ventana, text="Membresía:").pack()
+    entrada_puntos.grid(row=4, column=1, padx=5, pady=5, sticky="w")
+
+    tk.Label(ventana, text="Membresía:").grid(row=5, column=0, padx=5, pady=5, sticky="e")
     entrada_membresia = tk.Entry(ventana)
-    entrada_membresia.pack()
-    
-    tk.Label(ventana, text="Empresa:").pack()
+    entrada_membresia.grid(row=5, column=1, padx=5, pady=5, sticky="w")
+
+    tk.Label(ventana, text="Empresa:").grid(row=6, column=0, padx=5, pady=5, sticky="e")
     entrada_empresa = tk.Entry(ventana)
-    entrada_empresa.pack()
+    entrada_empresa.grid(row=6, column=1, padx=5, pady=5, sticky="w")
     
     seleccionar_tipo(None)
     
     
     # Botones
-    tk.Button(ventana, text="Agregar Cliente", command=agregar_cliente).pack()
+    tk.Button(ventana, text="Agregar Cliente", command=agregar_cliente).grid(row=7, column=1, columnspan=2, pady=10)
     
     
     
