@@ -66,3 +66,7 @@ class GestorClientes:
             return None
         
         
+    # Función para obtener todos los clientes
+    # utilizado en la interfaz
+    def obtener_todos(self):
+        return self.__clientes    
