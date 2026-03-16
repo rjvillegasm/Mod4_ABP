@@ -26,6 +26,7 @@ Manejo de errores: Validaciones y excepciones para entradas incorrectas
 
 ## Estructura:
 
+```
 ├── main.py
 ├── modulos/
 │   ├── __init__.py
@@ -36,6 +37,7 @@ Manejo de errores: Validaciones y excepciones para entradas incorrectas
 │   └── clientes_uml.drawio
 ├── clientes.csv
 └── README.md
+```
 
 ## Cómo ejecutar
 ```bash
