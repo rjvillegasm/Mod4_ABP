@@ -94,7 +94,7 @@ def busqueda_individual():
                 detalle = f"Empresa: {cliente.get_empresa()}"
             
             resultado_label.config(
-                text=f"ID: {cliente.get_id()} | Nombre: {cliente.get_nombre()} | Email: {cliente.get_email()} | Tipo: {tipo} | {detalle}"
+                text=f"ID: {cliente.get_id()} | Nombre: {cliente.get_nombre()}| Email: {cliente.get_email()} | Tipo: {tipo} | {detalle} | Descuento: {cliente.calcular_descuento()}"
             )
         else:
             resultado_label.config(text="Cliente no encontrado", fg="red")
@@ -218,5 +218,7 @@ if __name__=="__main__":
     resultado_label = tk.Label(ventana, text="", fg="blue")
     resultado_label.grid(row=14, column=0, columnspan=3, pady=5)
     
+    # muestra los clientes del csv en el treeview al iniciar 
+    listar_clientes()
     # Bucle de la app
     ventana.mainloop()
