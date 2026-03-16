@@ -26,16 +26,16 @@ Manejo de errores: Validaciones y excepciones para entradas incorrectas
 
 ## Estructura:
 
-├── main.py                          # Interfaz gráfica con tkinter
-├── modulos/                         # Paquete de módulos
-│   ├── __init__.py                  # Inicializador del paquete
-│   ├── cliente.py                    # Clase base Cliente
-│   ├── gestor_clientes.py            # Lógica de negocio y persistencia CSV
-│   └── tipos_cliente.py              # Clases derivadas (Regular, Premium, Corporativo)
-├── diagramas/                        # Diagramas del proyecto
-│   └── clientes_uml.drawio           # Diagrama UML
-├── clientes.csv                      # Archivo de datos (se genera automáticamente)
-└── README.md                         # Documentación del proyecto
+├── main.py
+├── modulos/
+│   ├── __init__.py
+│   ├── cliente.py
+│   ├── gestor_clientes.py
+│   └── tipos_cliente.py
+├── diagramas/
+│   └── clientes_uml.drawio
+├── clientes.csv
+└── README.md
 
 ## Cómo ejecutar
 ```bash
