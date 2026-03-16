@@ -40,6 +40,10 @@ class Cliente:
     def get_nombre(self):
         return self.__nombre
     
+    # función para obtener email
+    def get_email(self):
+        return self.__email
+    
     # Función para establecer nombre
     # Valida que sea una cadena y no esté vacío
     def set_nombre(self, nombre):

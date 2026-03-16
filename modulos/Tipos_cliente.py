@@ -24,6 +24,9 @@ class ClienteRegular(Cliente):
         descuento= self.__puntos* 0.001
         return min(descuento, 0.05)
     
+    def get_puntos(self):
+        return self.__puntos
+    
     
 class ClientePremium(Cliente):
     
@@ -36,6 +39,9 @@ class ClientePremium(Cliente):
     
     def calcular_descuento(self):
         return 0.1
+    
+    def get_membresia(self):
+        return self.__membresia
     
 class ClienteCorporativo(Cliente):
 
@@ -53,3 +59,6 @@ class ClienteCorporativo(Cliente):
     
     def calcular_descuento(self):
         return 0.15
+
+    def get_empresa(self):
+        return self.__empresa 

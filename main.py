@@ -56,17 +56,17 @@ def listar_clientes():
         
         # Determinar detalle según tipo
         if tipo == "Regular":
-            detalle = f"Puntos: {cliente._ClienteRegular__puntos}"
+            detalle = f"Puntos: {cliente.get_puntos()}"
         elif tipo == "Premium":
-            detalle = f"Membresía: {cliente._ClientePremium__membresia}"
-        else:  # Corporativo
-            detalle = f"Empresa: {cliente._ClienteCorporativo__empresa}"
+            detalle = f"Membresía: {cliente.get_membresia()}"
+        elif tipo == "Corporativo":  
+            detalle = f"Empresa: {cliente.get_empresa()}"
         
         
         tree.insert("", "end", values=(
-            cliente._Cliente__id,
-            cliente._Cliente__nombre, 
-            cliente._Cliente__email,
+            cliente.get_id(),
+            cliente.get_nombre(), 
+            cliente.get_email(),
             tipo,
             detalle
         )) 
@@ -87,14 +87,14 @@ def busqueda_individual():
         if cliente:
             tipo = type(cliente).__name__.replace('Cliente', '')
             if tipo == "Regular":
-                detalle = f"Puntos: {cliente._ClienteRegular__puntos}"
+                detalle = f"Puntos: {cliente.get_puntos()}"
             elif tipo == "Premium":
-                detalle = f"Membresía: {cliente._ClientePremium__membresia}"
+                detalle = f"Membresía: {cliente.get_membresia()}"
             else:
-                detalle = f"Empresa: {cliente._ClienteCorporativo__empresa}"
+                detalle = f"Empresa: {cliente.get_empresa()}"
             
             resultado_label.config(
-                text=f"ID: {cliente.get_id()} | Nombre: {cliente.get_nombre()} | Email: {cliente._Cliente__email} | Tipo: {tipo} | {detalle}"
+                text=f"ID: {cliente.get_id()} | Nombre: {cliente.get_nombre()} | Email: {cliente.get_email()} | Tipo: {tipo} | {detalle}"
             )
         else:
             resultado_label.config(text="Cliente no encontrado", fg="red")
